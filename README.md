@@ -8,7 +8,7 @@ EcoTrack solves this by letting a student log their day in under a minute throug
 **Who it's for:** university students who want to build more sustainable daily habits without a lecture — just quick, honest feedback.
 
 ## b. Live URL
-🔗 **[PASTE YOUR DEPLOYED VERCEL URL HERE]**
+🔗 **https://ecotrack-final.vercel.app**
 
 ## c. Features
 - Daily habit logging across 4 categories: transport, electricity, food, waste
@@ -24,3 +24,38 @@ EcoTrack solves this by letting a student log their day in under a minute throug
 **What it does:** Takes the student's logged habits and turns them into a fair, encouraging Eco Score plus one tailored tip — the AI reads the specific combination of habits (including free-text notes) and reasons about which behavior is most worth improving next.
 
 **System prompt used** (also in `api/analyze.js`):
+
+**Model used:** Google Gemini (`gemini-flash-latest`), via the Gemini API (free tier).
+
+## e. Tools, services, and AI models used
+- **Frontend:** HTML, CSS, vanilla JavaScript
+- **Backend:** Vercel Serverless Functions (Node.js)
+- **AI Model:** Google Gemini (`gemini-flash-latest`, via the free-tier Gemini API)
+- **Hosting/Deployment:** Vercel
+- **Version control:** Git & GitHub
+- **Storage:** Browser localStorage (for habit history — no external database needed for this scope)
+
+## f. Screenshots
+![Habit form](form.png.png)
+![Eco score result](result.png.png)
+![History view](history.png.png)
+
+## g. How to run this project locally
+
+### Prerequisites
+- Node.js installed
+- A free Google Gemini API key (aistudio.google.com/apikey)
+- Vercel CLI (optional, for local serverless function testing)
+
+### Steps
+Then add your `GEMINI_API_KEY` as an environment variable and open `http://localhost:3000`.
+
+### Deploying your own copy
+1. Push this repo to your own GitHub account (must be **public**).
+2. Go to vercel.com, import the GitHub repo.
+3. In Vercel project settings → Environment Variables, add:
+   - `GEMINI_API_KEY` = your key
+4. Deploy. Vercel will give you a live public URL.
+
+---
+Built as the Week 7 Final Project — Environmental Science, GCWUS.
