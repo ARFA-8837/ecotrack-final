@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EcoTrack Campus — Sustainability Habit Tracker</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">🌱 EcoTrack Campus</div>
+    <p class="tagline">Track your daily habits. Get an instant footprint estimate. Improve one small step at a time.</p>
+  </header>
+
+  <main class="container">
+    <section class="card form-card">
+      <h2>Log Today's Habits</h2>
+      <form id="habitForm">
+        <label>How did you commute today?
+          <select id="transport" required>
+            <option value="">Select...</option>
+            <option value="walked or cycled">Walked / Cycled</option>
+            <option value="used public transport (bus/van)">Public Transport</option>
+            <option value="rode a motorbike">Motorbike</option>
+            <option value="drove or was driven in a car">Car</option>
+            <option value="stayed home / did not commute">Stayed Home</option>
+          </select>
+        </label>
+
+        <label>Approx. electricity use today
+          <select id="electricity" required>
+            <option value="">Select...</option>
+            <option value="minimal (mostly lights/fan, few hours)">Minimal</option>
+            <option value="moderate (AC or heater used part of the day)">Moderate</option>
+            <option value="high (AC/heater running most of the day)">High</option>
+          </select>
+        </label>
+
+        <label>Food habits today
+          <select id="food" required>
+            <option value="">Select...</option>
+            <option value="mostly plant-based meals">Mostly Plant-Based</option>
+            <option value="mixed meat and vegetables">Mixed</option>
+            <option value="mostly meat-heavy meals">Meat-Heavy</option>
+          </select>
+        </label>
+
+        <label>Waste habits today
+          <select id="waste" required>
+            <option value="">Select...</option>
+            <option value="segregated waste and avoided single-use plastic">Segregated & Avoided Plastic</option>
+            <option value="used some single-use plastic, no segregation">Some Plastic, No Segregation</option>
+            <option value="used a lot of single-use plastic, threw everything together">Heavy Plastic Use</option>
+          </select>
+        </label>
+
+        <label>Anything else you'd like to mention? (optional)
+          <textarea id="notes" placeholder="e.g. I reused a water bottle, or I left AC on all night..."></textarea>
+        </label>
+
+        <button type="submit" id="submitBtn">Get My Eco Estimate</button>
+      </form>
+    </section>
+
+    <section class="card result-card" id="resultCard" style="display:none;">
+      <h2>Your Result</h2>
+      <div id="loadingState" class="loading" style="display:none;">Analyzing your day... 🌍</div>
+      <div id="resultContent"></div>
+    </section>
+
+    <section class="card history-card">
+      <h2>Your Recent History</h2>
+      <div id="historyList" class="history-list">
+        <p class="empty-state">No entries yet. Log your first day above!</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built for the "Ship Your AI App" final project — Environmental Science, GCWUS.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
