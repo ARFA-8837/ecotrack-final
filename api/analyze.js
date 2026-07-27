@@ -42,7 +42,7 @@ Give me my Eco Score, summary, and tip in the required JSON format.`;
 
   try {
     const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-    const MODEL = 'gemini-2.5-flash';
+    const MODEL = 'gemini-flash-latest';
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent?key=${GEMINI_API_KEY}`;
 
     const response = await fetch(url, {
