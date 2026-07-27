@@ -60,7 +60,7 @@ Give me my Eco Score, summary, and tip in the required JSON format.`;
         ],
         generationConfig: {
           temperature: 0.7,
-          maxOutputTokens: 500,
+          maxOutputTokens: 1000,
           responseMimeType: "application/json"
         }
       })
